@@ -46,12 +46,6 @@ namespace Library_Labb1.Repository
             await _context.SaveChangesAsync();
         }
 
-        //public async Task<List<Book>> GetBookByNameAsync(string bookName)
-        //{
-        //    return await _context.Books
-        //                         .Where(b => b.Title.Contains(bookName))
-        //                         .ToListAsync();
-        //}
 
         public async Task<IEnumerable<Book>> GetBooksByNameAsync(string bookName)
         {

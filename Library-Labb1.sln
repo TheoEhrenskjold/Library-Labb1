@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35208.52
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library-Labb1", "Library-Labb1\Library-Labb1.csproj", "{3AD9AF93-7393-4778-8739-DE9FA24D6E2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library-Labb1", "Library-Labb1\Library-Labb1.csproj", "{3AD9AF93-7393-4778-8739-DE9FA24D6E2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web-Library", "Web-Library\Web-Library.csproj", "{63E7A08B-BD08-41B8-A432-214B24EEE758}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web-Library", "Web-Library\Web-Library.csproj", "{63E7A08B-BD08-41B8-A432-214B24EEE758}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "AngFrontEnd", "AngFrontEnd\AngFrontEnd.esproj", "{B1E61438-7353-43C7-8A94-26553DD94DBB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,12 @@ Global
 		{63E7A08B-BD08-41B8-A432-214B24EEE758}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63E7A08B-BD08-41B8-A432-214B24EEE758}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63E7A08B-BD08-41B8-A432-214B24EEE758}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1E61438-7353-43C7-8A94-26553DD94DBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1E61438-7353-43C7-8A94-26553DD94DBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1E61438-7353-43C7-8A94-26553DD94DBB}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B1E61438-7353-43C7-8A94-26553DD94DBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1E61438-7353-43C7-8A94-26553DD94DBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1E61438-7353-43C7-8A94-26553DD94DBB}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

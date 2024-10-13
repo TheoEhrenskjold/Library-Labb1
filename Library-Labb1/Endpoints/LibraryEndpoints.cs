@@ -92,20 +92,12 @@ namespace Library_Labb1.Endpoints
                 return Results.BadRequest(response);
             }
 
-            if (await _bookrepo.GetBooksByNameAsync(_book.Title) != null)
-            {
-                response.ErrorMessage.Add("Book already exists");
-                return Results.BadRequest(response);
-            }
-
-            // Kontrollera om boken redan finns
-            //if (await _bookrepo.GetBookByIdAsync(_book.Id) != null)
+            //if (await _bookrepo.GetBooksByNameAsync(_book.Title) != null)
             //{
             //    response.ErrorMessage.Add("Book already exists");
             //    return Results.BadRequest(response);
             //}
-
-            // Lägg till boken i databasen
+           
             await _bookrepo.AddBookAsync(_book);
             await _bookrepo.SaveAsync();
 

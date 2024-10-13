@@ -1,0 +1,16 @@
+body {
+  background-image: url('13433552-stockholms-stadsbibliotek-1920x1264.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #f0f0f0; /* Fallback background color */
+  height: 100%; /* Ensure the body takes the full viewport height */
+  margin: 0; /* Remove default margin */
+}
+
+html, body {
+  height: 100%;
+  margin: 0; /* Remove default margin */
+}
+
+

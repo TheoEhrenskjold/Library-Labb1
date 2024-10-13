@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif; /* Modern font */
+}
+
+body {
+    
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: lavender;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;  
+}
+
+.book-list ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 20px; /* Spacing between the items */
+  padding: 0;
+  list-style: none;
+}
+
+.book-list .book-item {
+  border: 1px solid #ccc;
+  padding: 15px;
+  background-color: lightblue;
+  border-radius: 5px;
+}
+
+h2 {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 34px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.book-list {
+  width: 55%;
+}
+
+.ABook {
+  width: 35%;
+}
+
+.book-item {
+  background-color: #fdfdfd;
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+  .book-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+
+h3 {
+  color: #2980b9;
+  font-size: 18px;
+  
+}
+
+button {
+  background-color: #2980b9;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+}
+
+  button:hover {
+    background-color: #1e6a94;
+  }
+
+textarea, input {
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border 0.3s ease;
+}
+
+  input:focus, textarea:focus {
+    border-color: #2980b9;
+  }
+
+textarea {
+  resize: none;
+  height: 100px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.ABook h3 {
+  margin-top: 30px;
+}
+
+.ABook form {
+  background-color: lightblue;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .book-list, .ABook {
+    width: 100%;
+  }
+}

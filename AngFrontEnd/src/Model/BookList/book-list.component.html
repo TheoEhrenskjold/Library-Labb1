@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="book-list">
+    <h2>Library af Granvägén</h2>
+    <ul>
+      <li *ngFor="let book of books" class="book-item">
+        <h3>{{ book.title }}</h3>
+        <p>by {{ book.author }} ({{ book.yearPublished }}) - {{ book.genre }}</p>
+        <button (click)="selectBook(book)">Edit</button>
+        <button (click)="deleteBook(book.id)">Delete</button>
+        <p>Status: {{ book.isAvailable ? 'Available' : 'Not Available' }}</p>
+      </li>
+    </ul>
+  </div>
+
+  <div class="ABook">
+    <h3 *ngIf="selectedBook">Edit Book</h3>
+    <form *ngIf="selectedBook" class="form" (ngSubmit)="updateBook(selectedBook)">
+      <input [(ngModel)]="selectedBook.title" name="title" placeholder="Title" required>
+      <input [(ngModel)]="selectedBook.author" name="author" placeholder="Author" required>
+      <input type="number" [(ngModel)]="selectedBook.yearPublished" name="yearPublished" placeholder="Year" required>
+      <input [(ngModel)]="selectedBook.genre" name="genre" placeholder="Genre" required>
+      <textarea [(ngModel)]="selectedBook.description" name="description" placeholder="Description"></textarea>
+
+      <label>
+        <input type="checkbox" [(ngModel)]="selectedBook.isAvailable" name="isAvailable" >
+        Available
+      </label>
+
+      <button type="submit">Update</button>
+      <button (click)="clearSelection()">Cancel</button>
+    </form>
+
+    <h3>Add New Book</h3>
+    <form #newBookForm="ngForm" class="form" (ngSubmit)="addBook(newBookForm.value)">
+      <input [(ngModel)]="newBook.title" name="title" placeholder="Title" required>
+      <input [(ngModel)]="newBook.author" name="author" placeholder="Author" required>
+      <input type="number" [(ngModel)]="newBook.yearPublished" name="yearPublished" placeholder="Year" required>
+      <input [(ngModel)]="newBook.genre" name="genre" placeholder="Genre" required>
+      <textarea [(ngModel)]="newBook.description" name="description" placeholder="Description"></textarea>
+
+      <label>
+        <input type="checkbox" [(ngModel)]="newBook.isAvailable" name="isAvailable">
+        Available
+      </label>
+
+      <button type="submit">Add</button>
+    </form>
+  </div>
+</div>

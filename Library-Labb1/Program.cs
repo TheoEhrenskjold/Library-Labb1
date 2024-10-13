@@ -1,10 +1,8 @@
-
 using FluentValidation;
 using Library_Labb1.Data;
 using Library_Labb1.Endpoints;
 using Library_Labb1.Repository;
 using Microsoft.EntityFrameworkCore;
-using System;
 
 namespace Library_Labb1
 {
@@ -17,13 +15,25 @@ namespace Library_Labb1
             // Add services to the container.
             builder.Services.AddAuthorization();
 
+            // Configure CORS
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin() // Tillåter alla ursprung
+                               .AllowAnyMethod() // Tillåter alla HTTP-metoder
+                               .AllowAnyHeader(); // Tillåter alla headers
+                    });
+            });
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddValidatorsFromAssemblyContaining<Program>();
 
-
-            builder.Services.AddDbContext<LibraryContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionToDB")));
+            builder.Services.AddDbContext<LibraryContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionToDB")));
             builder.Services.AddScoped<IBookRepo, BookRepo>();
 
             var app = builder.Build();
@@ -37,9 +47,10 @@ namespace Library_Labb1
 
             app.UseHttpsRedirection();
 
+            // Enable CORS
+            app.UseCors("AllowAll");
+
             app.UseAuthorization();
-
-
 
             app.ConfigurationLibraryEndpoints();
 
